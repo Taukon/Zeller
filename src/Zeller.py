@@ -13,7 +13,9 @@ class Zeller:
         strdate = repattern.match(self.inputmessage)
         if strdate:
             date = [int(strdate[1]), int(strdate[2]), int(strdate[3])]
-            if  date[1] == 2 and date[2] > 29:
+            if date[0]%4 == 0 and date[1] == 2 and date[2] > 29:
+                return NULL
+            elif date[1] == 2 and date[2] > 28:
                 return NULL
             else:
                 return date

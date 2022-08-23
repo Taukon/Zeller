@@ -32,6 +32,12 @@ class TestZeller(unittest.TestCase):
         ans = NULL
         self.assertEqual(ans, result)
 
+    def test_入力の正規表現数値オーバーうるう年エラー(self):
+        zeller = Zeller("2020/2/29")
+        result = zeller.getDate()
+        ans = NULL
+        self.assertEqual(ans, result)
+
     def test_ツェラーの計算正常(self):
         zeller = Zeller("2022/8/23")
         result = zeller.calcZeller()
