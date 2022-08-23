@@ -1,5 +1,4 @@
 import re
-from asyncio.windows_events import NULL
 from unittest import result
 
 
@@ -14,13 +13,13 @@ class Zeller:
         if strdate:
             date = [int(strdate[1]), int(strdate[2]), int(strdate[3])]
             if date[0]%4 == 0 and date[1] == 2 and date[2] > 29:
-                return NULL
+                return None
             elif date[1] == 2 and date[2] > 28:
-                return NULL
+                return None
             else:
                 return date
         else:
-            return NULL
+            return None
 
     def calcZeller(self):
         date = self.getDate()
@@ -37,7 +36,7 @@ class Zeller:
         day = ["日", "月", "火", "水", "木", "金", "土"]
         mod = self.calcZeller()
         if mod == 8:
-            return NULL
+            return None
         else:
             result = day[mod] + "曜日"
             return result
